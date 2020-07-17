@@ -3,6 +3,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from datetime import datetime
 
 
 # -- Initialization section --
@@ -13,7 +14,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/index')
 def index():
-     return render_template("index.html")
+     return render_template("index.html", time=datetime.now())
       
 
 
@@ -24,12 +25,12 @@ def fightinggame():
     user_game = request.form["game"]
     print(user_game)
     if user_game =="fighting game":
-        return render_template("fighting_game.html")
+        return render_template("fighting_game.html", time=datetime.now())
     # return "fighting game "
     elif user_game =="first person shooter":
-         return render_template("first_person_shooter.html")
+         return render_template("first_person_shooter.html", time=datetime.now())
     elif user_game =="platformer":
-        return render_template("platformer.html")
+        return render_template("platformer.html", time=datetime.now())
 
         
     

@@ -1,13 +1,17 @@
 <html>
     <head>
         <title>Welcome to the game recommender</title>
-    </head>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}?q={{ time }}" />
+    
+   
+</style>
+</head>
     <body>
-        <h1>Welcome to the game recommender</h1>
-        <p>We can find your favorite game here!</p>
-        <p>Choose a game and you will find out more about it!</p>
-        <p>We have fighting games, first person shooter, and platformer</p>
-        <p>Please choose one of these options</p>
+        <h1 class="sansserif">Welcome to the game recommender</h1>
+        <p class="sansserif">We can find your favorite game here!</p>
+        <p class="sansserif">Choose a game and you will find out more about it!</p>
+        <p class="sansserif">We have fighting games, first person shooter, and platformer</p>
+        <p class="sansserif">Please choose one of these options</p>
         <form method="post" action="/results">
             <input type="text" name="game" placeholder="Enter your game here"/>
             <input type="submit" value="Submit"/>
